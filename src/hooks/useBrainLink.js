@@ -5,9 +5,8 @@ export const useBrainLink = () => {
 
   const connect = async () => {
     const device = await navigator.bluetooth.requestDevice({
-      filters: [{ name: "IMISW12(ID-1141)" }],
-      //     acceptAllDevices: true,
-      //   optionalServices: ["0000fee0-0000-1000-8000-00805f9b34fb"],
+      acceptAllDevices: true,
+      optionalServices: ["0000fee0-0000-1000-8000-00805f9b34fb"],
     });
     if (!device) {
       console.error("Failed to connect to device.");
